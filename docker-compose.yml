@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app                                # Mount the current directory to /app in the container
+      - "G:/My Drive/AIC2024/Data2024/media:/app/media" # Persist media files from your local path
+      - ./staticfiles:/app/staticfiles        # Persist static files
+    environment:
+      DJANGO_SETTINGS_MODULE: "AIC.settings"
+    command: >
+      sh -c "python manage.py migrate &&
+             python manage.py collectstatic --noinput &&
+             python manage.py runserver 0.0.0.0:8000"
