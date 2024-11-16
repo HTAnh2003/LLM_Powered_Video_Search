@@ -97,7 +97,7 @@ The `LLM-Powered Video Search System` is an advanced multimodal video search sol
 - **Screenshots**: ![image](./figs/image/demo.png)
 
 ## 👣 Workflow
-![Pipeline](./figs/image/pipeline.png)
+![Pipeline](./figs/image/Pipeline.png)
 - **Data Processing**: Video data is processed using ASR or extracted via TransnetV2, then converted into image features and metadata.
 ![Data Processing](./figs/image/data_processing.png)
 - **LLM Powered Interaction**: Natural language queries are processed by the LLM and combined with image features and metadata for relevant video retrieval.
